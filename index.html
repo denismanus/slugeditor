@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Get HTML Table TR And TD Index</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <input type="file" id="map"  name="files[]" />
+                <label id='btn-save' class="btn btn-default">Save </label>
+                <input  id="input-fileName" type="text" placeholder="Имя файла без расширения">
+            </div>
+            <div class="col-md-1">
+                <input type="number" class="form-control" name="columns" min="1" max="250" value="3">
+                <input type="number" class="form-control" name="rows" min="1" max="250" value="3">
+                <label class="btn btn-default" onclick="createTable()" value="Create">Create</label>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <p>Тип - </p>
+                    <p id='type'></p>   
+                </div>
+                <div>
+                    <p>Позиция x - </p>
+                    <p id='X'></p>
+                    
+                </div>
+                <div>
+                    <p>Позиция y - </p>
+                    <p id='Y'></p>
+                </div>
+                <div>
+                    <p>Позиция телепорта x - </p>
+                    <input id='tX' type="text">
+                </div>
+                <div>
+                    <p>Позиция телепорта y - </p>
+                    <input id='tY' type="text">
+                    <label class="btn btn-default" onclick="saveTeleport()">Save </label>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <input type="file" id="files" name="files[]" multiple />
+                <div class="btn-group btn-group-justified">
+                    <div id="mode_select" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input type="radio" id="delete" name="block" value="delete" />
+                            <label for="delete">Delete</label>
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" id="select" name="block" value="select" />
+                            <label for="select">Select</label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="here_table" class="center-block">
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>

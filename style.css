@@ -1,0 +1,60 @@
+table {
+    border-collapse: collapse;
+    border:1;
+    background-color: rgb(255, 255, 255);
+    margin: 0px auto;   
+}
+p{
+    display: inline;
+}
+td {
+    width:28px; 
+    height:28px;
+    background-size: 100%;
+}
+td:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: red;
+    color: #fff;
+    font-weight: bold
+}
+
+.sprite{
+    width:28px;
+    height:28px;
+}
+
+
+.fadein {
+    width: 36px;
+    height: 36px;
+    background-size: 100%;
+}
+/* .fadein:hover{
+  
+   
+} */
+
+.fadein img{
+    opacity:1;
+    transition: 0.5s ease;
+    }
+    
+.fadein img:hover{
+    opacity:0.1;
+    transition: 0.5s ease;
+}
+
+
+BUTTON SPAN {
+    line-height: 14px;
+    font-size: 14px;
+    padding: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;    
+}

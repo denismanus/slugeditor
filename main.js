@@ -33,19 +33,22 @@ function handleJsonLoad(evt) {
 }
 
 function parseMap(json) {
-
+maxY = 0, maxX = 0;
     for (var key in json) {
         if (json.hasOwnProperty(key)) {
             for (var block in json[key]) {
                 for (var pos in json[key][block]) {
-                    if (pos == "x")
+                    if (pos == "x"){
                         maxX = json[key][block][pos] > maxX ? json[key][block][pos] : maxX;
+                    }
                     if (pos == "y")
                         maxY = json[key][block][pos] > maxY ? json[key][block][pos] : maxY;
                 }
             }
         }
     }
+    maxX+=1;
+    maxY+=1;
     createTable(maxY, maxX);
     for (var key in json) {
         if (json.hasOwnProperty(key)) {
@@ -130,6 +133,18 @@ function saveAsJson() {
     var obj;
     var root = {
         SimpleBlock: [],
+        RedDec1: [],
+        RedDec2: [],
+        RedDec3: [],
+        BlueDec1:[],
+        BlueDec2:[],
+        BlueDec3:[],
+        PurpleDec1:[],
+        PurpleDec2:[],
+        PurpleDec3:[],
+        GreenDec1: [],
+        GreenDec2: [],
+        GreenDec3: [],
         Danger: [],
         Red: [],
         Green: [],
@@ -155,7 +170,9 @@ function saveAsJson() {
                         teleportPosition: { x: data[i][q].teleportPosition.x, y: maxY - data[i][q].teleportPosition.y }
                     }
                     root[data[i][q].type].push(obj)
-                } else if (data[i][q].type == "SimpleBlock" || data[i][q].type == "Saw" || data[i][q].type == "Danger") {
+                } else 
+                //if (data[i][q].type == "SimpleBlock" || data[i][q].type == "Saw" || data[i][q].type == "Danger") 
+                {
                     obj = {
                         x: data[i][q].x,
                         y: maxY - data[i][q].y

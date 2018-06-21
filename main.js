@@ -145,7 +145,7 @@ function saveAsJson() {
         button: [],
         closedDoor: [],
         coin: [],
-        electricity:[],
+        exit:[],
         emptyGround:[],
         ground:[],
         ground1:[],
